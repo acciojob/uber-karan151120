@@ -20,6 +20,10 @@ public class TripBooking {
 
     private int bill;
 
+    @ManyToMany
+    @JoinColumn
+    Customer customer;
+
     public TripBooking() {
     }
 
@@ -64,11 +68,11 @@ public class TripBooking {
         this.distanceInKm = distanceInKm;
     }
 
-    public TripStatus getStatus() {
+    public TripStatus getTripStatus() {
         return tripStatus;
     }
 
-    public void setStatus(TripStatus tripStatus) {
+    public void setTripStatus(TripStatus tripStatus) {
         this.tripStatus = tripStatus;
     }
 
