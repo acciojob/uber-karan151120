@@ -16,13 +16,33 @@ public class TripBooking {
     private int distanceInKm;
 
     @Enumerated(EnumType.STRING)
-    private TripStatus tripStatus;
+    private TripStatus status;
 
     private int bill;
 
     @ManyToMany
     @JoinColumn
     Customer customer;
+
+    @ManyToOne
+    @JoinColumn
+    Driver driver;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
 
     public TripBooking() {
     }
@@ -32,7 +52,7 @@ public class TripBooking {
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
         this.distanceInKm = distanceInKm;
-        this.tripStatus = tripStatus;
+        this.status = tripStatus;
         this.bill = bill;
     }
 
@@ -68,12 +88,12 @@ public class TripBooking {
         this.distanceInKm = distanceInKm;
     }
 
-    public TripStatus getTripStatus() {
-        return tripStatus;
+    public TripStatus getStatus() {
+        return status;
     }
 
-    public void setTripStatus(TripStatus tripStatus) {
-        this.tripStatus = tripStatus;
+    public void setStatus(TripStatus status) {
+        this.status = status;
     }
 
     public int getBill() {
