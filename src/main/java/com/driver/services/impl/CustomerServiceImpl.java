@@ -51,9 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 		//1. Do the basic conditions filter
 
 		List<Driver> allDrivers = driverRepository2.findAll();
-//		if(allDrivers == null){
-//			throw new Exception("No cab available!");
-//		}
+
 
 		for(Driver driver1: allDrivers){
 
